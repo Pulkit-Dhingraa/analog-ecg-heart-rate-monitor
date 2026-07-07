@@ -98,9 +98,6 @@ R = 1 / (2π · 50 · 10 nF) = 318.3 kΩ
 | **270 kΩ + 47 kΩ (series)** | 317 kΩ | 50.2 Hz |
 
 The series pair is the accurate choice.
-> Correction vs. the written report: §4.4 of the report states "330 kΩ in series with a 220 kΩ
-> trimmer," which is impossible — a series combination can only exceed 330 kΩ, never reach 318 kΩ.
-> The correct realisation is 270 kΩ + 47 kΩ, or a single 330 kΩ accepting f_H ≈ 48 Hz.
 
 **Roll-off:** first order = 20 dB/decade. So relative to 50 Hz, the response is ≈−6 dB at 100 Hz
 and ≈−12 dB at 200 Hz, and only −0.18 dB at the 10 Hz test frequency — i.e. the filter is
@@ -165,11 +162,6 @@ Fixing C = 100 µF (standard electrolytic) and solving for T = 60 s:
 ```
 R = 60 / (1.1 · 100 µF) = 545,454 Ω ≈ 545 kΩ
 ```
-
-Realised as 510 kΩ + 33 kΩ in series (or a trimmer). Measured window was 60.0 ± 0.5 s at 25 °C.
-> Correction vs. the report: §6.5 says R was trimmed to "555 kΩ for exactly 60 s," but
-> 1.1 · 555 kΩ · 100 µF = 61.05 s. The value that gives 60 s is **545 kΩ**; a small trim
-> compensates for the electrolytic's tolerance and leakage.
 
 ---
 
