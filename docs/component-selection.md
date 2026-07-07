@@ -112,16 +112,7 @@ not need — a ±0.5 s window is ±0.8 % of a minute, i.e. <1 BPM.
 
 ---
 
-## 7404 — the gate
 
-**The job.** The CD4026's clock-inhibit (INH) pin disables counting when HIGH. The 555 output is
-HIGH during the active window, which is the wrong polarity. A single 7404 inverter flips it so INH
-is LOW (counting enabled) exactly during the window.
-
-**Why an inverter and not AND-gate logic.** It's the minimum part count: one gate replaces a
-gating network. Clean and cheap.
-
----
 
 ## CD4026 ×2 — decade counter + 7-segment driver
 
