@@ -84,9 +84,9 @@ analog-ecg-heart-rate-monitor/
 ├── README.md                     ← you are here
 ├── docs/
 │   ├── design-calculations.md    ← gain, cutoffs, R/C selection, assumptions
-│   ├── component-selection.md    ← why each part (the interview defense)
+│   ├── component-selection.md    ← why each part 
 │   ├── results.md                ← waveform-by-waveform walkthrough
-│   ├── project-report.pdf        ← full academic report
+│   |
 │   ├── handwritten-analog-calcs.jpg
 │   └── handwritten-digital-calcs.jpg
 ├── schematics/                   ← Proteus schematics (analog + digital)
