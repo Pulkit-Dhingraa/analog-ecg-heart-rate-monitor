@@ -1,8 +1,7 @@
 # Component Selection & Defense
-
+A good designers always compares and justifies his component , So-
 For each major part: *why it was chosen, what else was on the table, the trade-offs, and where it
-falls short.* This is the "why this over that" reasoning an interviewer will probe.
-
+falls short.* This is the "why this over that" 
 ---
 
 ## AD620 — instrumentation amplifier (the front-end)
@@ -45,30 +44,7 @@ instrumentation amplifier.
 **Verdict.** Best CMRR-per-cost-per-availability for a single-lead teaching build. Any of AD620 /
 INA128 / INA333 would work; the AD620 was the pragmatic pick.
 
-> **Note on terminology:** the AD620 *is* an instrumentation amplifier — a complete 3-op-amp IA on
-> one die. This project **used** that IC and set its gain with one resistor; it did **not** build
-> an IA from discrete op-amps. That distinction is worth stating cleanly in interviews.
 
----
-
-## Active filters on 741 op-amps
-
-**The job.** Two first-order active sections: a high-pass to strip the DC electrode offset, and a
-low-pass to attenuate EMG/EMI and mains. "Active" (op-amp buffered) rather than passive so each
-stage presents low output impedance to the next and the filter isn't loaded down.
-
-**Why the 741.** It is the default general-purpose op-amp — universally available, trivially
-understood, and at 0.048 Hz–50 Hz the 741's modest gain-bandwidth (~1 MHz) and slew rate are not
-remotely a limitation. For an audio-band-and-below filter, a premium op-amp buys nothing.
-
-**Alternatives / trade-offs.**
-- **TL072 / MCP6xxx (FET-input):** lower input bias current, so less DC error through the large
-  330 kΩ / 318 kΩ resistors. A reasonable upgrade if the small op-amp offset (±2 mV on the 741)
-  ever mattered — here it didn't affect comparator switching.
-- **Higher-order filter (Sallen-Key, Bessel):** sharper roll-off, discussed below.
-
-**Limitation.** First order = gentle 20 dB/decade roll-off, so 50 Hz mains is only −3 dB down, not
-notched out. Accepted deliberately (next section).
 
 ---
 
@@ -169,6 +145,5 @@ CD4026's counter-plus-decoder integration is exactly why it was chosen.
 
 ## One-line summary
 
-Every part was chosen for the **minimum complexity that satisfies the heart-rate task on parts a
-student can actually buy** — AD620 for CMRR, first-order filters instead of a Bessel+notch,
+Every part was chosen for the **minimum complexity that satisfies the heart-rate task on parts Ican actually buy from pocket.** — AD620 for CMRR, first-order filters instead of a Bessel+notch,
 LM393+555+7404+CD4026 to replace a microcontroller and a PC entirely.
